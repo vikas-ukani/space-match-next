@@ -1,0 +1,28 @@
+{
+  "name": "space-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.1",
+    "axios": "^0.21.1",
+    "js-cookie": "^2.2.1",
+    "next": "10.1.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.8.1",
+    "react-multi-carousel": "^2.6.2",
+    "react-query": "^3.16.0",
+    "react-redux": "^7.2.4",
+    "react-select": "^4.3.1",
+    "react-slick": "^0.28.1",
+    "react-toast-notifications": "^2.4.4",
+    "slick-carousel": "^1.8.1",
+    "swr": "^0.5.6",
+    "underscore": "^1.13.1"
+  }
+}
