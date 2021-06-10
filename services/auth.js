@@ -8,3 +8,11 @@ export const LoginAPI = (params  = {}) => {
         body: params
     }
 }
+
+export const ForgotPasswordAPI = (params  = {}) => {
+    return {
+        url: API_URL + '/forgotpassword-create',
+        method: 'post',
+        body: params
+    }
+}
