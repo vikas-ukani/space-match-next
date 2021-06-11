@@ -1,12 +1,12 @@
-import { getUser } from "@/utils/cookies";
+import { getUser, setCookie } from "@/utils/cookies";
 import { useEffect } from "react";
 
 const DashboardSideNav = () => {
     const user = getUser()
     useEffect(() => {
-        console.log("IN")
+        setCookie('isShowingHeaderNav', false)
         return () => {
-            console.log("OUT")
+            setCookie('isShowingHeaderNav', true)
         }
     }, [])
 
