@@ -1,18 +1,12 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import router, { useRouter } from "next/router";
 
 import { LOGIN_ROUTE } from "@/constants/routes";
-import { destroyAuth, getCookie, getUser } from "@/utils/cookies";
+import { destroyAuth, getUser } from "@/utils/cookies";
 
 const Navigation = () => {
-    const router = useRouter()
+    // const router = useRouter()
     const user = getUser()
-
-    useEffect(() => {
-        
-        console.log('Matiching Route', getCookie('isShowingHeaderNav'));
-    }, [])
 
     const logout = () => {
         destroyAuth()
@@ -31,20 +25,16 @@ const Navigation = () => {
 
 
                         <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mobiletoggle" aria-controls="mobiletoggle" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="icon-bar top-bar">
-
-                            </span>
-                            <span className="icon-bar middle-bar">
-
-                            </span>
-                            <span className="icon-bar bottom-bar">
-
-                            </span>
+                            <i className="icon-bar top-bar"> </i>
+                            <i className="icon-bar middle-bar"></i>
+                            <i className="icon-bar bottom-bar"></i>
                         </button>
 
+                        {/*  */}
                         <div className="collapse navbar-collapse" id="mobiletoggle">
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item active ">
+                                 
+                                <li className="nav-item  ">
                                     <Link href="/find-space">
                                         <a className="nav-link">Find space</a>
                                     </Link>
@@ -80,8 +70,7 @@ const Navigation = () => {
                                         <li className="nav-item dropdown">
                                             <Link href="/dashboard" >
                                                 <a className="w-100 nav-link dropdown-toggle text-capitalize fa-2x" id="myAccountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <span className="icon icon-user">
-                                                    </span>
+                                                    <i className="icon icon-user"></i>
                                                     <span title={user?.firstname} >
                                                         {user?.surname}
                                                     </span>

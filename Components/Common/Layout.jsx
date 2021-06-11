@@ -1,16 +1,19 @@
-import { getToken } from "@/utils/cookies";
-import { useEffect } from "react";
+import { getCookie } from "@/utils/cookies";
+import { useEffect, useState } from "react";
 import Footer from "./Footer"
 import FooterBottom from "./FooterBottom"
 import HeadScript from "./HeadScript"
 import Navigation from "./Navigation";
-import router from 'next/router'
-import { LOGIN_ROUTE } from "@/constants/routes";
 const Layout = ({ children }) => {
+    const [isShowingHeaderNav, setIsShowingHeaderNav] = useState(true)
+    useEffect(() => {
+        setIsShowingHeaderNav(getCookie('isShowingHeaderNav'))
+    })
+
     return (
         <div>
             <HeadScript />
-            <Navigation />
+            {isShowingHeaderNav == true && <Navigation />}
             {{ ...children }}
             <FooterBottom />
             <Footer />
