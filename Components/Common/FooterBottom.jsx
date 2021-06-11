@@ -55,7 +55,7 @@ const FooterBottom = () => {
                                         <Link href="/" >
                                             <a className="dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 How
-                                            <span className="text-capitalize">SpaceMatch</span> works
+                                                <span className="text-capitalize">SpaceMatch</span> works
                                             </a>
                                         </Link>
                                         <div className="dropdown-menu">
@@ -144,7 +144,9 @@ const FooterBottom = () => {
                                 <div className="row gutters-30 ">
                                     <div className="col-lg-12">
                                         <h4>
-                                            <a href="{{url( '/')}}" className="text-primary">Find a rental space.</a>
+                                            <Link href={'/'} >
+                                                <a className="text-primary">Find a rental space.</a>
+                                            </Link>
                                         </h4>
                                     </div>
 
@@ -152,7 +154,7 @@ const FooterBottom = () => {
                                         <div className="footer-link">
                                             <h6 className="mb-1">South Africa’s Shopping Centres</h6>
                                             <Link href={"/all-malls"}>
-                                                <a href="">All Shopping Centres</a>
+                                                <a >All Shopping Centres</a>
                                             </Link>
                                             {footerMalls && (
                                                 <ul>
@@ -176,7 +178,7 @@ const FooterBottom = () => {
                                     <div className="col-lg-6">
                                         <div className="footer-link">
                                             <h6 className="mb-1">South Africa’s Suburbs & Cities</h6>
-                                            <a href="/all-cities">All Suburbs & Cities</a>
+                                            <Link href={"/all-cities"}><a >All Suburbs & Cities</a></Link>
                                             {footerCities && (<ul>
                                                 <li>
                                                     <a className="text-uppercase text-white">FEATURED</a>
@@ -202,9 +204,9 @@ const FooterBottom = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <ul className="footer-bottom-link">
-                                <li><a href="/privacy-policy">Privacy Policy</a></li>
-                                <li><a href="/terms-and-condition">Terms of Service</a></li>
-                                <li><a href="/acceptable-use-policy">Acceptable Use Policy</a></li>
+                                <li><Link href="/privacy-policy" ><a >Privacy Policy</a></Link></li>
+                                <li><Link href="/terms-and-condition" ><a >Terms of Service</a></Link></li>
+                                <li><Link href="/acceptable-use-policy" ><a >Acceptable Use Policy</a></Link></li>
                             </ul>
                         </div>
                     </div>

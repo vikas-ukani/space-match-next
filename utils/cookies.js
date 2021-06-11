@@ -33,3 +33,6 @@ export const setCookie = (key, value = null) => {
 export const getCookie = (key  ) => {
     return Cookies.get(key) || null
 }
+export const removeCookie = (key) => {
+    Cookies.remove(key)
+}

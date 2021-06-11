@@ -6,11 +6,13 @@ const LandlordRouteLinks = () => {
     return (
         <>
             <li className="@if (Request::is('dashboard-landlord')){{'active'}}@endif">
-                <a href={'/dashboard-landlord'}>
-                    <i className="icon icon-dashboard">
-                    </i>
-                    <span>Dashboard</span>
-                </a>
+                <Link href={'/dashboard-landlord'}>
+                    <a >
+                        <i className="icon icon-dashboard">
+                        </i>
+                        <span>Dashboard</span>
+                    </a>
+                </Link>
             </li>
             {user.is_verify_fica_detail == 1 && (
                 <>
@@ -18,11 +20,13 @@ const LandlordRouteLinks = () => {
                     {((user.is_staff == 0 && user.is_verify_fica_detail == 1) || user.is_staff == 1) && (
                         <>
                             <li className="@if (Request::is('landlord-my-spaces')){{'active'}}@endif">
-                                <a href={'/landlord-my-spaces'}>
-                                    <i className="icon icon-space">
-                                    </i>
-                                    <span>My Spaces</span>
-                                </a>
+                                <Link href={'/landlord-my-spaces'}>
+                                    <a>
+                                        <i className="icon icon-space">
+                                        </i>
+                                        <span>My Spaces</span>
+                                    </a>
+                                </Link>
                             </li>
                             <li className="@if (Request::is('landlord-add-space')){{'active'}}@endif">
                                 <a href={'/landlord-add-space'}>
@@ -32,7 +36,7 @@ const LandlordRouteLinks = () => {
                                 </a>
                             </li>
                             <li className="@if (Request::is('landlord-favourite')){{'active'}}@endif">
-                                <a href={ '/landlord-favourite'}>
+                                <a href={'/landlord-favourite'}>
                                     <i className="icon icon-view">
                                     </i>
                                     <span>My Favourites</span>
@@ -76,21 +80,21 @@ const LandlordRouteLinks = () => {
                         </>
                     )}
                     <li className="@if (Request::is('landlord-fica-details')){{'active'}}@endif">
-                        <a href={ '/landlord-fica-details'}>
+                        <a href={'/landlord-fica-details'}>
                             <i className="icon icon-download align-middle">
                             </i>
                             <span>FICA Details</span>
                         </a>
                     </li>
                     <li className="@if (Request::is('landlord-profile')){{'active'}}@endif">
-                        <a href={ '/landlord-profile'}>
+                        <a href={'/landlord-profile'}>
                             <i className="icon icon-user">
                             </i>
                             <span>My Profile</span>
                         </a>
                     </li>
                     <li className="@if (Request::is('landlord-change-password')){{'active'}}@endif">
-                        <a href={ '/landlord-change-password'}>
+                        <a href={'/landlord-change-password'}>
                             <i className="icon icon-visibility-white">
                             </i>
                             <span>Change Password</span>
@@ -99,7 +103,7 @@ const LandlordRouteLinks = () => {
 
                     {user.is_staff == 0 &&
                         <li className="@if (Request::is('landlord-bank-detail')){{'active'}}@endif">
-                            <a href={ '/landlord-bank-detail'}>
+                            <a href={'/landlord-bank-detail'}>
                                 <i className="icon icon-bank">
                                 </i>
                                 <span>Banking Details</span>

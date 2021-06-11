@@ -1,13 +1,17 @@
+import Link from "next/link";
+
 const TenantRouteLinks = () => {
     return (
         <>
             <li className="@if (Request::is('dashboard-tenant')){{'active'}}@endif">
-                <a href={'/dashboard-tenant'}>
-                    <i className="icon icon-dashboard">
+                <Link href={'/dashboard-tenant'}>
+                    <a >
+                        <i className="icon icon-dashboard">
 
-                    </i>
-                    <span>Dashboard</span>
-                </a>
+                        </i>
+                        <span>Dashboard</span>
+                    </a>
+                </Link>
             </li>
             <li className="@if (Request::is('tenant-spacelist')){{'active'}}@endif">
                 <a href={'/tenant-spacelist'}>
@@ -40,12 +44,12 @@ const TenantRouteLinks = () => {
                 </a>
             </li>
             <li className="@if (Request::is('tenant-profile')){{'active'}}@endif">
-                <a href={'/tenant-profile'}>
-                    <i className="icon icon-user">
-
-                    </i>
-                    <span>My Profile</span>
-                </a>
+                <Link href={'/tenant-profile'}>
+                    <a >
+                        <i className="icon icon-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                </Link>
             </li>
             <li className="@if (Request::is('tenant-change-password')){{'active'}}@endif">
                 <a href={'/tenant-change-password'}>
@@ -65,7 +69,6 @@ const TenantRouteLinks = () => {
             <li className="@if (Request::is('tenant-fica-details')){{'active'}}@endif">
                 <a href={'/tenant-fica-details'}>
                     <i className="icon icon-download align-middle">
-
                     </i>
                     <span>FICA Details</span>
                 </a>
