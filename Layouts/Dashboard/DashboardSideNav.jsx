@@ -1,8 +1,14 @@
 import { getUser } from "@/utils/cookies";
+import { useEffect } from "react";
 
 const DashboardSideNav = () => {
-
     const user = getUser()
+    useEffect(() => {
+        console.log("IN")
+        return () => {
+            console.log("OUT")
+        }
+    }, [])
 
     return (
         <div>
