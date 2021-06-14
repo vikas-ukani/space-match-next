@@ -35,3 +35,12 @@ export const updateProfileAPI = (params = {}) => {
         body: params
     }
 }
+
+export const userChangePasswordAPI = (params = {}) => {
+    return {
+        url: `${API_URL}/change-password`,
+        method: 'post',
+        headers: { 'Authorization': `${getTokenType()} ${getToken()}`, 'Content-Type': 'application/json', },
+        body: params
+    }
+}
