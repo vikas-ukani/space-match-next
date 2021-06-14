@@ -26,3 +26,21 @@ export const getMe = (params = {}) => {
         body: params
     }
 }
+
+export const updateProfileAPI = (params = {}) => {
+    return {
+        url: `${API_URL}/update-profile`,
+        method: 'post',
+        headers: { 'Authorization': `${getTokenType()} ${getToken()}`, 'Content-Type': 'application/json', },
+        body: params
+    }
+}
+
+export const userChangePasswordAPI = (params = {}) => {
+    return {
+        url: `${API_URL}/change-password`,
+        method: 'post',
+        headers: { 'Authorization': `${getTokenType()} ${getToken()}`, 'Content-Type': 'application/json', },
+        body: params
+    }
+}

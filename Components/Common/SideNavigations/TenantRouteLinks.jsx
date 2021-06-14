@@ -51,8 +51,8 @@ const TenantRouteLinks = () => {
                     </a>
                 </Link>
             </li>
-            <li className="@if (Request::is('tenant-change-password')){{'active'}}@endif">
-                <a href={'/tenant-change-password'}>
+            <li className="@if (Request::is('tenant/change-password')){{'active'}}@endif">
+                <a href={'/tenant/change-password'}>
                     <i className="icon icon-visibility-white">
                     </i>
                     <span>Change Password</span>
