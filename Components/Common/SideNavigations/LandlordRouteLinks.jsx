@@ -16,7 +16,6 @@ const LandlordRouteLinks = () => {
             </li>
             {user.is_verify_fica_detail == 1 && (
                 <>
-
                     {((user.is_staff == 0 && user.is_verify_fica_detail == 1) || user.is_staff == 1) && (
                         <>
                             <li className="@if (Request::is('landlord-my-spaces')){{'active'}}@endif">

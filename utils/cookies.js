@@ -11,6 +11,10 @@ export const getToken = () => {
     return Cookies.get('token') || null
 }
 
+export const getTokenType = () => {
+    return Cookies.get('token_type') || null
+}
+
 export const setUser = (user = null) => {
     Cookies.set('user', typeof (user) == 'object' ? JSON.stringify(user) : user) || null
 }
@@ -25,7 +29,6 @@ export const destroyAuth = () => {
     Cookies.remove('token_type')
     Cookies.remove('user')
 }
-
 
 export const setCookie = (key, value = null) => {
     Cookies.set(key, value) || null
