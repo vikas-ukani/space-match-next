@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import Link from 'next/link'
 import { getSmallImageUrl } from "@/utils/image_path";
 const settings = {
     dots: true,
@@ -44,7 +45,9 @@ const SASuburbsAndCitiesSlider = ({ cities, setting = {} }) => {
                     return (
                         <div key={city.id} className="items col-12">
                             <div className="card-city">
-                                <a href="{{url( '/city/'.$city->slug)}}">
+                                <Link href={`/city/${city.slug}`}>
+                                    {/*  href="{{url( '/city/'.$city->slug)}}" */}
+                                <a>
                                     <div className="card-city-image h-100">
                                         <img src={getSmallImageUrl(city.listing_image_path)} height="100%" width="100%"
                                             className="img-fluid" alt={city.name} />
@@ -54,7 +57,8 @@ const SASuburbsAndCitiesSlider = ({ cities, setting = {} }) => {
                                             <h4 className="title-md">{city.name}</h4>
                                         </div>
                                     </div>
-                                </a>
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                     )

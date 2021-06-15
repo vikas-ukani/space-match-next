@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getSmallImageUrl } from "@/utils/image_path";
 
 
 const inner_arrow__css = {
@@ -69,10 +70,10 @@ const SpaceImageSlider = ({ spaceDetail, setting = {} }) => {
             {spaceDetail.spacePropertyImages.map(spaceImage => {
                 return (
                     <div key={spaceImage.id} className="space-image-item">
-                        <a href="">
-                            <img style={{ height: "50vh", }} width="100%" src={spaceImage.property_image_path} className="img-fluid rounded"
+                        {/* <a href=""> */}
+                            <img style={{ height: "50vh", }} width="100%" src={getSmallImageUrl(spaceImage.property_image_path)} className="img-fluid rounded"
                                 alt={spaceImage.property_image_name} />
-                        </a>
+                        {/* </a> */}
                     </div>
                 )
             })}
