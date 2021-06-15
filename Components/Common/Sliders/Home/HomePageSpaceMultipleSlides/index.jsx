@@ -41,7 +41,6 @@ const HomePageSpaceMultipleSlides = ({ spaceDetails, setting = {} }) => {
     return (
         <div className=" ">
             <Slider {...properties}>
-                {/* {...properties} */}
                 {spaceDetails.map(space => {
                     return (
                         <div key={space.id} className="col-12 space-item ">
