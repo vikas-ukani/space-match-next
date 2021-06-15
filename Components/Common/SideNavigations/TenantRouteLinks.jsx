@@ -27,8 +27,8 @@ const TenantRouteLinks = () => {
                     <span>My Rental Management</span>
                 </a>
             </li>
-            <li className="@if (Request::is('tenant-favourite')){{'active'}}@endif">
-                <a href={'/tenant-favourite'}>
+            <li className="@if (Request::is('tenant/favorite')){{'active'}}@endif">
+                <a href={'/tenant/favorite'}>
                     <i className="icon icon-view">
 
                     </i>
