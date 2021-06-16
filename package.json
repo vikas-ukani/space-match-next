@@ -24,6 +24,7 @@
     "react-slick": "^0.28.1",
     "react-toast-notifications": "^2.4.4",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.0.17",
     "swr": "^0.5.6",
     "underscore": "^1.13.1"
   }
