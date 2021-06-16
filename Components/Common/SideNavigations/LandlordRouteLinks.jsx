@@ -5,9 +5,9 @@ const LandlordRouteLinks = () => {
 
     return (
         <>
-            <li className="@if (Request::is('dashboard-landlord')){{'active'}}@endif">
+            <li>
                 <Link href={'/dashboard-landlord'}>
-                    <a >
+                    <a>
                         <i className="icon icon-dashboard">
                         </i>
                         <span>Dashboard</span>
@@ -18,7 +18,7 @@ const LandlordRouteLinks = () => {
                 <>
                     {((user.is_staff == 0 && user.is_verify_fica_detail == 1) || user.is_staff == 1) && (
                         <>
-                            <li className="@if (Request::is('landlord-my-spaces')){{'active'}}@endif">
+                            <li>
                                 <Link href={'/landlord-my-spaces'}>
                                     <a>
                                         <i className="icon icon-space">
@@ -27,14 +27,14 @@ const LandlordRouteLinks = () => {
                                     </a>
                                 </Link>
                             </li>
-                            <li className="@if (Request::is('landlord-add-space')){{'active'}}@endif">
+                            <li>
                                 <a href={'/landlord-add-space'}>
                                     <i className="icon icon-add-space">
                                     </i>
                                     <span>Add Space</span>
                                 </a>
                             </li>
-                            <li className="@if (Request::is('landlord-favourite')){{'active'}}@endif">
+                            <li>
                                 <a href={'/landlord-favourite'}>
                                     <i className="icon icon-view">
                                     </i>
@@ -45,7 +45,7 @@ const LandlordRouteLinks = () => {
                     )}
 
                     {(user.is_staff == 0 && user.is_verify_fica_detail == 1) && (
-                        <li className="@if (Request::is('view-approved-fica-document')){{'active'}}@endif">
+                        <li>
                             <a href={'/view-approved-fica-document'}>
                                 <i className="icon icon-download">
                                 </i>
@@ -55,21 +55,21 @@ const LandlordRouteLinks = () => {
                     )}
                     {((user.is_staff == 0 && user.is_verify_fica_detail == 1) || (user.is_staff == 1)) && (
                         <>
-                            <li className="@if (Request::is('landlord-rental-pipeline','landlord-rental-history')){{'active'}}@endif">
+                            <li>
                                 <a href={'/landlord-rental-pipeline'}>
                                     <i className="icon icon-view">
                                     </i>
                                     <span>Rental Pipeline</span>
                                 </a>
                             </li>
-                            <li className="@if (Request::is('landlord-entity-setup')){{'active'}}@endif">
+                            <li>
                                 <a href={'/landlord-entity-setup'}>
                                     <i className="icon icon-entity">
                                     </i>
                                     <span>Entity Setup</span>
                                 </a>
                             </li>
-                            <li className="@if (Request::is('landlord-agreement-template')){{'active'}}@endif">
+                            <li>
                                 <a href={'/landlord-agreement-template'}>
                                     <i className="icon icon-view">
                                     </i>
@@ -78,21 +78,21 @@ const LandlordRouteLinks = () => {
                             </li>
                         </>
                     )}
-                    <li className="@if (Request::is('landlord-fica-details')){{'active'}}@endif">
+                    <li>
                         <a href={'/landlord-fica-details'}>
                             <i className="icon icon-download align-middle">
                             </i>
                             <span>FICA Details</span>
                         </a>
                     </li>
-                    <li className="@if (Request::is('landlord-profile')){{'active'}}@endif">
+                    <li>
                         <a href={'/landlord-profile'}>
                             <i className="icon icon-user">
                             </i>
                             <span>My Profile</span>
                         </a>
                     </li>
-                    <li className="@if (Request::is('landlord-change-password')){{'active'}}@endif">
+                    <li>
                         <a href={'/landlord-change-password'}>
                             <i className="icon icon-visibility-white">
                             </i>
@@ -101,7 +101,7 @@ const LandlordRouteLinks = () => {
                     </li>
 
                     {user.is_staff == 0 &&
-                        <li className="@if (Request::is('landlord-bank-detail')){{'active'}}@endif">
+                        <li>
                             <a href={'/landlord-bank-detail'}>
                                 <i className="icon icon-bank">
                                 </i>

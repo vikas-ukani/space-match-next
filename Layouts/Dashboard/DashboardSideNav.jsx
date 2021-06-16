@@ -11,7 +11,7 @@ const DashboardSideNav = () => {
     setCookie('isShowingHeaderNav', false)
     const [isShowingTenantRoute, setIsShowingTenantRoute] = useState(false)
     const [isShowingLandlordRoute, setIsShowingLandlordRoute] = useState(false)
-    const tenantURLs = ['/dashboard-tenant', '/tenant-profile', '/tenant-spacelist', '/tenant/favorite', '/tenant-decline', '/tenant-rental-management', '/tenant-rental-history', '/tenant/change-password', '/tenant-bank-detail', '/thank-you-for-sending-enquiry', '/tenant-edit-enquiry/*', '/submit-enquiry', '/thank-you-for-edit-enquiry', '/tenant-fica-details']
+    const tenantURLs = ['/dashboard-tenant', '/tenant-profile', '/tenant/space-list', '/tenant/favorite', '/tenant-decline', '/tenant/rental-management', '/tenant-rental-history', '/tenant/change-password', '/tenant-bank-detail', '/thank-you-for-sending-enquiry', '/tenant-edit-enquiry/*', '/submit-enquiry', '/thank-you-for-edit-enquiry', '/tenant-fica-details']
     const landlordURLs = ['dashboard-landlord', 'landlord-profile', 'landlord-rental-pipeline', 'landlord-rental-history', 'landlord-entity-setup', 'landlord-my-spaces', 'landlord-add-space', 'landlord-change-password', 'landlord-bank-detail', 'landlord-agreement-template', 'view-approved-fica-document', 'landlord-edit-space/*', 'landlord-space-dates/*', 'add-space-thank-you', 'edit-space-thank-you', 'landlord-fica-details', 'landlord-favourite']
 
     useEffect(() => {

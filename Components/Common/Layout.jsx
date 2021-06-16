@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
 
     return (
         <div>
-            {console.log('isShowingHeaderNav', isShowingHeaderNav)}
             <HeadScript />
             {isShowingHeaderNav == null || isShowingHeaderNav == true}
             {(isShowingHeaderNav == null || isShowingHeaderNav === true) && <Navigation />}
