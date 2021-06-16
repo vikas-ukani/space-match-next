@@ -13,8 +13,8 @@ const TenantRouteLinks = () => {
                     </a>
                 </Link>
             </li>
-            <li className="@if (Request::is('tenant-spacelist')){{'active'}}@endif">
-                <a href={'/tenant-spacelist'}>
+            <li className="@if (Request::is('tenant/space-list')){{'active'}}@endif">
+                <a href={'/tenant/space-list'}>
                     <i className="icon icon-save">
 
                     </i>
