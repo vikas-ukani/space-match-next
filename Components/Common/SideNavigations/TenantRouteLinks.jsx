@@ -3,47 +3,49 @@ import Link from "next/link";
 const TenantRouteLinks = () => {
     return (
         <>
-            <li className="@if (Request::is('dashboard-tenant')){{'active'}}@endif">
+            <li >
                 <Link href={'/dashboard-tenant'}>
                     <a >
-                        <i className="icon icon-dashboard">
-
-                        </i>
+                        <i className="icon icon-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </Link>
             </li>
-            <li className="@if (Request::is('tenant/space-list')){{'active'}}@endif">
-                <a href={'/tenant/space-list'}>
-                    <i className="icon icon-save">
-
-                    </i>
-                    <span>My Saved Spaces</span>
-                </a>
+            <li >
+                <Link href={'/tenant/space-list'}>
+                    <a >
+                        <i className="icon icon-save"> </i>
+                        <span>My Saved Spaces</span>
+                    </a>
+                </Link>
             </li>
-            <li className="@if (Request::is('tenant-rental-management','tenant-rental-history')){{'active'}}@endif">
-                <a href={'/tenant-rental-management'}>
-                    <i className="icon icon-heart"></i>
-                    <span>My Rental Management</span>
-                </a>
+            <li >
+                <Link href={'/tenant/rental-management'}>
+                    <a>
+                        <i className="icon icon-heart"></i>
+                        <span>My Rental Management</span>
+                    </a>
+                </Link>
             </li>
-            <li className="@if (Request::is('tenant/favorite')){{'active'}}@endif">
-                <a href={'/tenant/favorite'}>
-                    <i className="icon icon-view">
-
-                    </i>
-                    <span>My Favourites</span>
-                </a>
+            <li >
+                <Link href={'/tenant/favorite'}>
+                    <a>
+                        <i className="icon icon-view">
+                        </i>
+                        <span>My Favourites</span>
+                    </a>
+                </Link>
             </li>
-            <li className="@if (Request::is('tenant-decline')){{'active'}}@endif">
-                <a href={'/tenant-decline'}>
-                    <i className="icon icon-decline">
-
-                    </i>
-                    <span>Declined Spaces</span>
-                </a>
+            <li >
+                <Link href={'/tenant-decline'}>
+                    <a >
+                        <i className="icon icon-decline">
+                        </i>
+                        <span>Declined Spaces</span>
+                    </a>
+                </Link>
             </li>
-            <li className="@if (Request::is('tenant-profile')){{'active'}}@endif">
+            <li >
                 <Link href={'/tenant-profile'}>
                     <a >
                         <i className="icon icon-user"></i>
@@ -51,27 +53,31 @@ const TenantRouteLinks = () => {
                     </a>
                 </Link>
             </li>
-            <li className="@if (Request::is('tenant/change-password')){{'active'}}@endif">
-                <a href={'/tenant/change-password'}>
-                    <i className="icon icon-visibility-white">
-                    </i>
-                    <span>Change Password</span>
-                </a>
+            <li >
+                <Link href={'/tenant/change-password'}>
+                    <a >
+                        <i className="icon icon-visibility-white">
+                        </i>
+                        <span>Change Password</span>
+                    </a>
+                </Link>
             </li>
-            <li className="@if (Request::is('tenant-bank-detail')){{'active'}}@endif">
-                <a href={'/tenant-bank-detail'}>
-                    <i className="icon icon-bank">
-
-                    </i>
-                    <span>Banking Details</span>
-                </a>
+            <li >
+                <Link href={'/tenant-bank-detail'}>
+                    <a>
+                        <i className="icon icon-bank"></i>
+                        <span>Banking Details</span>
+                    </a>
+                </Link>
             </li>
-            <li className="@if (Request::is('tenant-fica-details')){{'active'}}@endif">
-                <a href={'/tenant-fica-details'}>
-                    <i className="icon icon-download align-middle">
-                    </i>
-                    <span>FICA Details</span>
-                </a>
+            <li >
+                <Link href={'/tenant-fica-details'} >
+                    <a >
+                        <i className="icon icon-download align-middle">
+                        </i>
+                        <span>FICA Details</span>
+                    </a>
+                </Link>
             </li>
         </>
     );
