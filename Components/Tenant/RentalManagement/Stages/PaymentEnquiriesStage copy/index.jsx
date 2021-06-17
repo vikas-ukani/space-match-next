@@ -12,6 +12,9 @@ const PaymentEnquiriesStage = ({ payment_enquiries }) => {
                                 {data?.created_date}
                             </p>
                             <p>Ref. No:{data?.property?.reference_number}</p>
+
+                            {data?.is_payment_done_by_tenant == 0 && <p>{data.time_left_to_do_payment}hours left</p>}
+
                         </div>
                         <div className="card-body p-0 pb-2">
                             <p  >
@@ -23,96 +26,80 @@ const PaymentEnquiriesStage = ({ payment_enquiries }) => {
                             <p className="small text-grey mt-1">
                                 {data?.property?.full_address},{data?.property?.address_postal_code}
                             </p>
-
-                            {/* <div className="d-flex justify-content-around my-2 py-2">
-                                <p className="small">
-                                    <span className="text-grey mr-1">Start:</span>
-                                    {data?.start_date}
+                            <div className="d-flex justify-content-around my-2 py-2">
+                                <p class="cursor-unset small"><span class="'+text_color+' mr-1">Start:</span> {data.start_date}</p>
+                                <p class="cursor-unset small"><span class="'+text_color+' mr-1">End:</span>{data.end_date}</p>
+                            </div>
+                            <div className="d-flex justify-content-between pb-2">
+                                <p class="btn cursor-unset btn-primary-light font-weight-bold">{data?.property_rate_details?.total_days}  Days</p>
+                                <span class="btn btn-dark cursor-unset">R {data?.property_rate_details?.tenant_amount_with_vat}</span>
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <p>
+                                    <span class="small font-weight-medium">
+                                        Please note: The amount shown above does not reflect a deposit or any other amounts specific to your agreement that have been agreed with
+                                        <strong>
+                                            {data?.property?.space_owner_contact_person}
+                                        </strong>.
+                                    </span>
                                 </p>
-                                <p className="small">
-                                    <span className="text-grey mr-1">End:</span>
-                                    {data?.end_date}
-                                </p>
-                            </div> */}
+                            </div>
 
-                            {/* <div className="d-flex justify-content-between border-bottom pb-3">
-                                <p className="btn cursor-unset">
-                                    {data?.property_rate_details?.total_days} Days
-                                </p>
-                                <span className="btn btn-dark cursor-unset">
-                                    R {data?.property_rate_details?.tenant_amount_with_vat}
-                                </span>
-                            </div> */}
-
-                            {/* <div className="d-flex py-2 mt-1">
-                                <p className="font-weight-medium text-dark-grey">Site visit?</p>
-                                <p className="font-weight-bold ml-2">
-                                    {data?.site_visit == 1 ? 'Yes' : 'No'}
-                                </p>
-
-                            </div> */}
                             <div className="card-foot">
-
-                                {data.has_landlord_set_date == 0 && <p className="small font-italic text-warning">The Owner will contact you to arrange a site visit</p>}
-
-                                {(data.site_visit_status == 1 && data.is_tenant_happy_with_space == 0) && (
-                                    <>
-                                        <p className="font-weight-medium text-center text-dark-grey mt-2">Confirmed site visit time :</p>
-                                        <span className="btn cursor-unset">{data.site_visit_selected_date_time}</span>
-                                    </>
-                                )}
-
-                                {(data.has_landlord_set_date == 1 && data.site_visit_status == 1) && (
-                                    <>
-                                        {(data.is_tenant_happy_with_space == 0) && (
-                                            <>
-                                                <p className="small mt-2">Please select whether to book the Space or not : </p>
-                                                <p className="font-weight-medium text-center text-dark-grey mt-2">Book Space ? </p>
-                                            </>
-                                        )}
-
-                                        {(data?.tenant_detail?.is_fica_details_uploaded) && (
-                                            <p className="small font-italic text-warning mt-2">
-                                                In order to proceed with your booking, we will need your Fica details. Please click
-                                                <a href="' + base_url + '/tenant-fica-details" target="_blank" className="font-weight-bold text-danger">HERE
-                                                </a> to upload your FICA details.
-                                                <br /> After the site visit and once your Fica details are verified, you can select whether to book the Space or not:
-                                            </p>
-                                        )}
-
-                                    </>
-                                )}
-
-                                {(data?.has_landlord_set_date == 0 || data.site_visit_status == 1) && (
-                                    <div className="d-flex justify-content-between">
-                                        {data?.has_landlord_set_date == 0 && (
-                                            <a className="btn btn-secondary withdraw-enquiry text-white">Withdraw</a>
-                                        )}
-
-                                        {(data.is_tenant_happy_with_space == 1)
-                                            ? (
-                                                <a className="btn btn btn-secondary view-enquiry text-white">View Space</a>
-                                            )
-                                            : (
-                                                <a className="btn btn btn-secondary view-enquiry text-white">View</a>
-                                            )
-                                        }
+                                {data?.is_payment_done_by_tenant == 0 && (
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <p class="font-weight-medium text-dark-grey">Legal Agreement</p>
                                     </div>
                                 )}
 
-                                {(data.is_fica_verify_by_landlord == 2 && data.is_fica_sortout_by_admin == 0) && (
-                                    <p className="small font-italic text-success mt-2">Landlord raised FICA issue, SpaceMatch might contact you.</p>
+                                {data?.is_payment_done_by_tenant == 1 && (
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <p class="font-weight-medium text-dark-grey">Payment confirmation has been uploaded.</p>
+                                    </div>
+                                )}
+                                {data?.is_payment_done_by_tenant == 1 && (
+                                    <>
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <p class="font-weight-medium text-dark-grey">Payment confirmation has been uploaded.</p>
+                                        </div>
+                                        <div className="d-flex justify-content-between mt-2">
+                                            <a class="btn btn-secondary view-agreement">View lease agreement</a>
+                                        </div>
+                                    </>
+
+                                )}
+                            </div>
+
+
+
+
+
+                            <div className="d-flex justify-content-between mt-2">
+                                {data.is_payment_done_by_tenant == 1 && (
+                                    <>
+                                        <a class="btn btn-secondary view-enquiry">View</a>
+                                        <span class="btn btn-light"><i class="icon icon-paid-primary mr-2"></i>Paid</span>
+                                    </>
                                 )}
 
-                                {(data.has_landlord_set_date == 1 && data.site_visit_status == 1 && data.is_tenant_happy_with_space == 0 && data.tenant_detail.is_fica_details_uploaded == 1)
-                                    && (
-                                        <p className="small font-italic text-warning mt-2">
-                                            Please note: If you select <strong>NO</strong>, your enquiry will be terminated. If you select
-                                            <strong>YES</strong>,
-                                            the Space Owner will prepare a lease agreement for you..
-                                        </p>
-                                    )}
+                                {data.is_payment_done_by_tenant == 0 && (
+                                    <>
+                                        <a class="btn btn-secondary view-agreement">View Agreement</a>
+                                        <a data-payableamount={data.property_rate_details?.tenant_amount_with_vat} class="btn btn-primary payment-enquiry">Upload payment confirmation</a>
+                                    </>
+                                )}
+
                             </div>
+
+                            {data.is_payment_done_by_tenant == 0 && (
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <p>
+                                        <span class="small font-weight-medium">
+                                            Please note: You will receive an invoice from SpaceMatch by email.Please arrange payment using one of our payment options and upload confirmation using the link above.
+                                        </span>
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 )

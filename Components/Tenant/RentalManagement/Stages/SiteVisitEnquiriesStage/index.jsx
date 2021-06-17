@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const SiteVisitEnquiriesStage = ({ site_visit_enquiries }) => {
     return (
-        <div  >
+        <div>
             {!site_visit_enquiries && <p>No enquiries at this stage</p>}
             {site_visit_enquiries && site_visit_enquiries.map((data, idx) => {
                 return (

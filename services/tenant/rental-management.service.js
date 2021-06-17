@@ -25,3 +25,13 @@ export const getPaymentPipelineAPI = () => {
         body: null
     }
 }
+
+
+export const getDeclinePipelineAPI = () => {
+    return {
+        url: `${API_URL}/tenant-declined-pipeline`,
+        method: 'get',
+        headers: { 'Authorization': `${getTokenType()} ${getToken()}`, 'Content-Type': 'application/json', },
+        body: null
+    }
+}
