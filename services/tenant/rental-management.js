@@ -9,3 +9,11 @@ export const getTenantPendingApprovalAPI = () => {
         body: null
     }
 }
+export const getTenantSiteVisitAPI = () => {
+    return {
+        url: `${API_URL}/tenant-site-visit`,
+        method: 'get',
+        headers: { 'Authorization': `${getTokenType()} ${getToken()}`, 'Content-Type': 'application/json', },
+        body: null
+    }
+}

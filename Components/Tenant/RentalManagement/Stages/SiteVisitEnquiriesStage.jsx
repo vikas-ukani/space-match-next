@@ -1,23 +1,10 @@
 import Link from "next/link";
-import { useState } from "react";
 
-const PendingApprovalStage = ({ pending_enquiries }) => {
-    const [isShowWithdrawEnquiry, setIsShowWithdrawEnquiry] = useState(false)
-    const [isShowViewEnquiry, setIsShowViewEnquiry] = useState(false)
-
-    const updateWithdrawEnquiry = (id) => {
-        console.log(" id ", id);
-        setIsShowWithdrawEnquiry(true)
-    }
-    const updateViewEnquiry = (id) => {
-        console.log(" id ", id);
-        setIsShowViewEnquiry(true)
-    }
-
+const SiteVisitEnquiriesStage = ({ site_visit_enquiries}) => {
     return (
         <div>
-            {!pending_enquiries && <p>No enquiries at this stage</p>}
-            {pending_enquiries && pending_enquiries.map((pending_enquiry, idx) => {
+            {!site_visit_enquiries && <p>No enquiries at this stage</p>}
+            {site_visit_enquiries && site_visit_enquiries.map((pending_enquiry, idx) => {
                 return (
                     <div className="card-column">
                         <div className="card-head d-flex justify-content-between">
@@ -105,4 +92,4 @@ const PendingApprovalStage = ({ pending_enquiries }) => {
     );
 }
 
-export default PendingApprovalStage;
+export default SiteVisitEnquiriesStage;
