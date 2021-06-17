@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-const SiteVisitEnquiriesStage = ({ site_visit_enquiries }) => {
+const PaymentEnquiriesStage = ({ payment_enquiries }) => {
     return (
-        <div  >
-            {!site_visit_enquiries && <p>No enquiries at this stage</p>}
-            {site_visit_enquiries && site_visit_enquiries.map((data, idx) => {
+        <div >
+            {!payment_enquiries && <p>No enquiries at this stage</p>}
+            {payment_enquiries && payment_enquiries.map((data, idx) => {
                 return (
                     <div key={data.id} className="card-column">
                         <div className="card-head d-flex justify-content-between">
@@ -121,4 +121,4 @@ const SiteVisitEnquiriesStage = ({ site_visit_enquiries }) => {
     );
 }
 
-export default SiteVisitEnquiriesStage;
+export default PaymentEnquiriesStage;

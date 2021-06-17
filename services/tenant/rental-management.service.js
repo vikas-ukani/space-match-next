@@ -17,3 +17,11 @@ export const getTenantSiteVisitAPI = () => {
         body: null
     }
 }
+export const getPaymentPipelineAPI = () => {
+    return {
+        url: `${API_URL}/tenant-payment-pipeline`,
+        method: 'get',
+        headers: { 'Authorization': `${getTokenType()} ${getToken()}`, 'Content-Type': 'application/json', },
+        body: null
+    }
+}
