@@ -15,11 +15,11 @@ const PendingApprovalStage = ({ pending_enquiries }) => {
     }
 
     return (
-        <div>
+        <div >
             {!pending_enquiries && <p>No enquiries at this stage</p>}
             {pending_enquiries && pending_enquiries.map((data, idx) => {
                 return (
-                    <div className="card-column">
+                    <div key={data.id} className="card-column">
                         <div className="card-head d-flex justify-content-between">
                             <p>
                                 {data?.created_date}
@@ -62,10 +62,8 @@ const PendingApprovalStage = ({ pending_enquiries }) => {
                                 <p className="font-weight-bold ml-2">
                                     {data?.site_visit == 1 ? 'Yes' : 'No'}
                                 </p>
-
                             </div>
                             <div className="card-foot">
-
                                 {data?.tenant_detail?.is_fica_details_uploaded == 0 && (
                                     <p className="small font-italic text-warning">
                                         You have not uploaded FICA Detail's. Please click
@@ -75,7 +73,6 @@ const PendingApprovalStage = ({ pending_enquiries }) => {
                                         </a> to upload it.
                                     </p>
                                 )}
-
                                 {(data?.tenant_detail?.is_fica_details_uploaded == 1 && data?.tenant_detail?.is_verify_fica_category_by_admin == 0) && (
                                     <p className="small font-italic text-warning">
                                         Your FICA Detail\'s are not approved. Please click
@@ -84,7 +81,6 @@ const PendingApprovalStage = ({ pending_enquiries }) => {
                                         </a> to check it.
                                     </p>
                                 )}
-
                                 <div className="d-flex justify-content-between mt-2">
                                     {(data?.tenant_detail?.is_verify_fica_category_by_admin == 1) && (
                                         <>
@@ -92,11 +88,8 @@ const PendingApprovalStage = ({ pending_enquiries }) => {
                                         </>
                                     )}
                                     <a className="btn btn-primary view-enquiry text-white" onClick={() => updateViewEnquiry(data?.id)}>View</a>
-
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 )
