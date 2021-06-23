@@ -9,6 +9,7 @@ export const getTenantPendingApprovalAPI = () => {
         body: null
     }
 }
+
 export const getTenantSiteVisitAPI = () => {
     return {
         url: `${API_URL}/tenant-site-visit`,
@@ -17,6 +18,7 @@ export const getTenantSiteVisitAPI = () => {
         body: null
     }
 }
+
 export const getPaymentPipelineAPI = () => {
     return {
         url: `${API_URL}/tenant-payment-pipeline`,
@@ -25,7 +27,6 @@ export const getPaymentPipelineAPI = () => {
         body: null
     }
 }
-
 
 export const getDeclinePipelineAPI = () => {
     return {
