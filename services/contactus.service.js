@@ -1,11 +1,12 @@
 import { getToken, getTokenType } from "@/utils/cookies"
-import { API_URL } from ".."
+import { API_URL } from "."
 
-export const getEnquiriesAPI = () => {
+
+export const contactUsAPI = (params = {}) => {
     return {
-        url: `${API_URL}/enquiry`,
-        method: 'get',
+        url: `${API_URL}/contact-us-form`,
+        method: 'post',
         headers: { 'Authorization': `${getTokenType()} ${getToken()}`, 'Content-Type': 'application/json', },
-        body: null
+        body: params
     }
 }
