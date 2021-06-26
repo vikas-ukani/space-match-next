@@ -36,3 +36,12 @@ export const getDeclinePipelineAPI = () => {
         body: null
     }
 }
+
+export const getEnquiryByIDAPI = (id) => {
+    return {
+        url: `${API_URL}/enquiry/${id}`,
+        method: 'get',
+        headers: { 'Authorization': `${getTokenType()} ${getToken()}`, 'Content-Type': 'application/json', },
+        body: null
+    }
+}

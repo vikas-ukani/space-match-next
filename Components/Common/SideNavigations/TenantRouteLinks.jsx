@@ -37,7 +37,7 @@ const TenantRouteLinks = () => {
                 </Link>
             </li>
             <li >
-                <Link href={'/tenant-decline'}>
+                <Link href={'/tenant/decline'}>
                     <a >
                         <i className="icon icon-decline">
                         </i>

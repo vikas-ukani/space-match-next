@@ -13,9 +13,6 @@ const FooterBottom = () => {
         let responseCities = await getData('/space-cities?featured=1')
         let footer_cities = responseCities.data;
         setFooterCities(footer_cities)
-
-
-
     }, [])
 
     return (
