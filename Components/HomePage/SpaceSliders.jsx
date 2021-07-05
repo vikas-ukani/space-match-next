@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react';
 import { getData } from '../../lib/callAPI/call';
 import HomePageSpaceMultipleSlides from '../Common/Sliders/Home/HomePageSpaceMultipleSlides';
 
+export const getServerSideProps = async () => {
+    let { data } = await getData('/space/cities')
+    return {
+        props: { data }
+    }
+}
 
-const SpaceSliders = () => {
-    const [data, setData] = useState({})
-    useEffect(async () => {
-        let { data: resData } = await getData('/space/cities')
-        setData(resData)
-    }, [])
+const SpaceSliders = ({ data }) => {
+    if (!data) {
+        return <div />
+    }
     const spacesKeys = Object.keys(data)
     const spacesValues = Object.values(data)
     return (
@@ -49,7 +52,7 @@ const SpaceSliders = () => {
                             {/* <Link href="/find-space"> */}
                             <a className="btn btn-dark text-white">
                                 View All Spaces
-                                </a>
+                            </a>
                             {/* </Link> */}
                         </div>
                     </div>

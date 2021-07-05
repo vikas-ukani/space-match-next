@@ -58,7 +58,8 @@ const RentalManagement = ({
                                 <div className="ml-auto mt-sm-0 mt-3 d-inline-block">
                                     <a href="{{url('/tenant-rental-history')}}" className="text-primary font-weight-bold">
                                         <i className="icon icon-history mr-1"></i>
-                                        Rental History</a>
+                                        Rental History
+                                    </a>
                                 </div>
                             </div>
                         </div>
