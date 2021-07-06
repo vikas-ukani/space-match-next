@@ -2,38 +2,48 @@ import HomePageSpaceMultipleSlides from "@/Components/Common/Sliders/Home/HomePa
 import SpaceImageSlider from "@/Components/Common/Sliders/Home/HomePageSpaceMultipleSlides/SpaceImageSlider";
 import FavoriteImageSlider from "@/Components/Common/Sliders/Tenant/Favorite/FavoriteImageSlider";
 import DashboardSideNav from "@/Layouts/Dashboard/DashboardSideNav";
-import { useSWRAxios } from "@/lib/useSWRAxios";
+import { axiosCall, useSWRAxios } from "@/lib/useSWRAxios";
 import { getFavoritesAPI } from "@/services/tenant/favorits";
 import { getUser } from "@/utils/cookies";
 import { getSmallImageUrl } from "@/utils/image_path";
 import { redirectToLogin } from "@/utils/route";
 import { useEffect, useState } from "react";
+import { reject } from "underscore";
 
-export const getServerSideProps = async ({ req}) => {
-    const { token } = req.cookies 
+const fetchAllAPIData = async (token_type, token) => {
+    const Authorization = `${token_type} ${token}`
+    /** Get All PENDING APPROVAL */
+    var ApiData = getFavoritesAPI()
+    ApiData.headers.Authorization = Authorization
+    const { data: { data: favData } } = await axiosCall(ApiData)
+    return { favData }
+}
+
+export const getServerSideProps = async ({ req }) => {
+    const { token_type, token } = req.cookies
     /** checking for login token authentication... */
     if (!token) return redirectToLogin()
-
     return {
-        props:{
-            
+        props: {
+            ...await fetchAllAPIData(token_type, token)
         }
     }
 }
 
 
-const Favorite = () => {
-    const [favorites, setFavorites] = useState(null)
+const Favorite = ({ favData }) => {
+    const [favorites, setFavorites] = useState(favData)
     const user = getUser()
-
     const { getSWR } = useSWRAxios()
 
     useEffect(async () => {
         const { data: { data }, success, error } = await getSWR(getFavoritesAPI())
         setFavorites(data)
-        console.log("Final data, success, error", data, success, error);
     }, []);
 
+    const removeFromFavoriteList = id => {
+        setFavorites(reject(favorites, { id }))
+    }
 
     return (
         <div>
@@ -56,18 +66,17 @@ const Favorite = () => {
                                     <div className="space-item mt-4">
                                         <div className="mb-5 space-item ">
                                             <div className="">
-                                                <FavoriteImageSlider setting={{ dots: true}} favoriteImages={list.spacePropertyImages}   />
-                                                {/* <SpaceImageSlider spaceDetail={list} /> */}
+                                                <FavoriteImageSlider setting={{ dots: true }} favoriteImages={list.spacePropertyImages} />
                                             </div>
                                         </div>
-                                        {/* removeFromFavoriteList({{$space->id}},this */}
+                                        {/*  */}
                                         {/* {(user.is_staff == 0) || (user.is_staff == 1 && user.permission_name == 'write') && */}
-                                            <a className="space-delete" title="Remove as Favourite" >
-                                                <i className="icon icon-circle-delete"></i>
-                                            </a>
+                                        <a className="space-delete" title="Remove as Favourite" onClick={() => removeFromFavoriteList(list.id)}>
+                                            <i className="icon icon-circle-delete"></i>
+                                        </a>
                                         {/* } */}
 
-                                        <a className="space-title text-truncate" href="/space/{{$space->slug}}">
+                                        <a className="space-title text-truncate" href={`/space/${list.slug}`}>
                                             {list?.name}
                                         </a>
                                         <div className="d-md-flex justify-content-between">
