@@ -62,17 +62,17 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                 <div className="list-space-date d-flex justify-content-end flex-lg-row flex-column">
                                     <p className="btn font-weight-medium bg-light-grey mb-2 cursor-unset">
                                         <span className="text-dark-grey text-capitalize">
-                                            Start:
-                                        </span>
+                                            Start: </span>
                                         <span>
                                             {data?.start_date}
                                         </span>
                                     </p>
                                     <p className="btn font-weight-medium bg-light-grey mb-2 ml-lg-3 ml-0 mt-0 cursor-unset">
                                         <span className="text-dark-grey text-capitalize">
-                                            End:
+                                            End: </span>
+                                        <span id="enquiry_end_date">
+                                            {data?.end_date}
                                         </span>
-                                        <span id="enquiry_end_date"></span>
                                     </p>
                                 </div>
                             </div>
@@ -85,9 +85,19 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                     <p className="detail-perday mb-3">Entity Details</p>
                                     <p id="entity_individually">Booking is done individually.Not booked on behalf of entity.</p>
                                     <ul className="text-grey" id="entity_behalf">
-                                        <li><span>Entity Name:</span> <span id="entity_name"></span></li>
-                                        <li><span>Vat Number:</span> <span id="entity_vat"></span></li>
-                                        <li id="website_detail"><span>Website:</span> <span id="website_url">www.ooberlojetco.co.za</span></li>
+                                        <li><span>Entity Name:</span> <span id="entity_name">
+                                            {data?.entityname}
+                                        </span></li>
+                                        <li><span>Vat Number:</span> <span id="entity_vat">
+                                            {data?.vatnumber}
+                                        </span></li>
+
+                                        {data?.dontwebsite == 0 &&
+                                            <li id="website_detail"><span>Website:</span> <span id="website_url">
+                                                {data?.website}
+                                            </span>
+                                            </li>
+                                        }
                                     </ul>
                                 </div>
 
