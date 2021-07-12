@@ -23,9 +23,9 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                 <div className="row">
                     <div className="mb-5 col-lg-12 space-item ">
                         <div className=" d-flex">
-                        {/* <DeclinedSpacesSlider images={data?.property?.spacePropertyImages} /> */}
-                        {/* <FavoriteImageSlider setting={{ dots: true }} favoriteImages={data?.property?.spacePropertyImages} /> */}
-                        {/* <SpaceImageSlider spaceDetail={list} /> */}
+                            {/* <DeclinedSpacesSlider images={data?.property?.spacePropertyImages} /> */}
+                            {/* <FavoriteImageSlider setting={{ dots: true }} favoriteImages={data?.property?.spacePropertyImages} /> */}
+                            {/* <SpaceImageSlider spaceDetail={list} /> */}
                         </div>
                         {/* <pre>{JSON.stringify(data?.property.spacePropertyImages, null, 1)}</pre> */}
                     </div>
@@ -38,30 +38,35 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                         <div className="list-space-card list-rental-card d-lg-flex align-items-lg-center">
                             <div className="form-group">
                                 <div className="space-item">
-                                <Link href={`/space/${data?.property?.slug}`}>
-                                    <a className="space-title text-truncate mt-0" target="_blank" id="enquiry_property_name">
-                                        {data?.property?.name}
-                                    </a>
-                                </Link>
+                                    <Link href={`/space/${data?.property?.slug}`}>
+                                        <a className="space-title text-truncate mt-0" target="_blank" id="enquiry_property_name">
+                                            {data?.property?.name}
+                                        </a>
+                                    </Link>
 
-                                <div>
-                                    <p className="space-address text-truncate" id="enquiry_address">
-                                        {data?.property?.full_address?.postal_code}
-                                    </p>
-                                    <p className="space-size" id="enquiry_property_size">
-                                        {data?.property?.property_size + ' ' + data?.property?.property_size_type}
-                                    </p>
-                                </div>
-                                <div>
-                                    <p className="space-price">R <span id="enquiry_price"></span> <span className="space-size">for <span id="enquiry_days"></span> days</span></p>
-                                </div>
+                                    <div>
+                                        <p className="space-address text-truncate" id="enquiry_address">
+                                            {data?.property?.full_address?.postal_code}
+                                        </p>
+                                        <p className="space-size" id="enquiry_property_size">
+                                            {data?.property?.property_size + ' ' + data?.property?.property_size_type}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p className="space-price">R <span id="enquiry_price"></span> <span className="space-size">for <span id="enquiry_days"></span> days</span></p>
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="form-group">
                                 <div className="list-space-date d-flex justify-content-end flex-lg-row flex-column">
                                     <p className="btn font-weight-medium bg-light-grey mb-2 cursor-unset">
-                                        <span className="text-dark-grey text-capitalize">Start:</span> <span id="enquiry_start_date"></span>
+                                        <span className="text-dark-grey text-capitalize">
+                                            Start:
+                                        </span>
+                                        <span>
+                                            {data?.start_date}
+                                        </span>
                                     </p>
                                     <p className="btn font-weight-medium bg-light-grey mb-2 ml-lg-3 ml-0 mt-0 cursor-unset">
                                         <span className="text-dark-grey text-capitalize">
