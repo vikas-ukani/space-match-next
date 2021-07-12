@@ -54,8 +54,9 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                     </div>
                                     <div>
                                         <p className="space-price">R <span id="enquiry_price">
-                                        </span> <span className="space-size">for <span id="enquiry_days">
-                                        </span> days</span>
+                                        </span>
+                                            <span className="space-size">for <span id="enquiry_days">
+                                            </span> days</span>
                                         </p>
                                     </div>
                                 </div>
@@ -89,12 +90,14 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                     <p id="entity_individually">Booking is done individually.Not booked on behalf of entity.</p>
                                     <ul className="text-grey" id="entity_behalf">
                                         <li>
-                                            <span>Entity Name:</span> <span id="entity_name">
+                                            <span>Entity Name:</span>
+                                            <span id="entity_name">
                                                 {data?.entityname}
                                             </span>
                                         </li>
                                         <li>
-                                            <span>Vat Number:</span> <span id="entity_vat">
+                                            <span>Vat Number:</span>
+                                            <span id="entity_vat">
                                                 {data?.vatnumber}
                                             </span>
                                         </li>
@@ -153,9 +156,8 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                 </div>
                                 <div className="detail-information mb-4">
                                     <ul className="form-row detail-image" id="enquiry_iamges">
-                                        var enquiry_images = enquiry_detail['spaceEnquiryImages'];
                                         {data?.spaceEnquiryImages?.map(({ enquiry_image_path }, idx) => (
-                                            <li className="col-sm-4 col-6">
+                                            <li key={idx} className="col-sm-4 col-6">
                                                 <img src={enquiry_image_path} className="img-fluid rounded w-100" />
                                             </li>
                                         ))}
