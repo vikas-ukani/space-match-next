@@ -93,9 +93,10 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                         </span></li>
 
                                         {data?.dontwebsite == 0 &&
-                                            <li id="website_detail"><span>Website:</span> <span id="website_url">
-                                                {data?.website}
-                                            </span>
+                                            <li id="website_detail"><span>Website:</span>
+                                                <span id="website_url">
+                                                    {data?.website}
+                                                </span>
                                             </li>
                                         }
                                     </ul>
@@ -103,8 +104,16 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
 
                                 <div className="detail-information mb-4">
                                     <p className="detail-perday mb-3">What will you use this space for?</p>
-
                                     <div className="detail-share mb-0 detail-share-space" id="space_used_for">
+                                        {data?.spaceUsedFor?.map(({ title, space_used_for_image_class }, idx) => (
+                                            <a href="" key={idx} className="text-grey text-center">
+                                                <span>
+                                                    <i class={`icon ${space_used_for_image_class} d-block mb-3`}></i>
+                                                </span>
+                                                {title}
+                                            </a>
+                                        ))}
+                                        )
                                     </div>
                                 </div>
 
