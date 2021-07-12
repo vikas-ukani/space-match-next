@@ -53,7 +53,10 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                         </p>
                                     </div>
                                     <div>
-                                        <p className="space-price">R <span id="enquiry_price"></span> <span className="space-size">for <span id="enquiry_days"></span> days</span></p>
+                                        <p className="space-price">R <span id="enquiry_price">
+                                        </span> <span className="space-size">for <span id="enquiry_days">
+                                        </span> days</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -85,15 +88,20 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                     <p className="detail-perday mb-3">Entity Details</p>
                                     <p id="entity_individually">Booking is done individually.Not booked on behalf of entity.</p>
                                     <ul className="text-grey" id="entity_behalf">
-                                        <li><span>Entity Name:</span> <span id="entity_name">
-                                            {data?.entityname}
-                                        </span></li>
-                                        <li><span>Vat Number:</span> <span id="entity_vat">
-                                            {data?.vatnumber}
-                                        </span></li>
+                                        <li>
+                                            <span>Entity Name:</span> <span id="entity_name">
+                                                {data?.entityname}
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>Vat Number:</span> <span id="entity_vat">
+                                                {data?.vatnumber}
+                                            </span>
+                                        </li>
 
                                         {data?.dontwebsite == 0 &&
-                                            <li id="website_detail"><span>Website:</span>
+                                            <li id="website_detail">
+                                                <span>Website:</span>
                                                 <span id="website_url">
                                                     {data?.website}
                                                 </span>
@@ -108,24 +116,30 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                         {data?.spaceUsedFor?.map(({ title, space_used_for_image_class }, idx) => (
                                             <a href="" key={idx} className="text-grey text-center">
                                                 <span>
-                                                    <i class={`icon ${space_used_for_image_class} d-block mb-3`}></i>
+                                                    <i class={`icon ${space_used_for_image_class} d-block mb-3`}>
+
+                                                    </i>
                                                 </span>
                                                 {title}
                                             </a>
                                         ))}
-                                        )
                                     </div>
                                 </div>
 
                                 <div className="detail-information mb-4">
                                     <p className="detail-perday mb-3">More about your Space</p>
-
                                     <ul className="text-grey">
-                                        <li className="d-md-flex"><p className="mr-md-4">Name of your project/application:</p> <p className="
-											font-weight-normal" id="project_name"></p></li>
+                                        <li className="d-md-flex">
+                                            <p className="mr-md-4">Name of your project/application:</p>
+                                            <p className="font-weight-normal" id="project_name">
+                                                {data?.project_name}
+                                            </p>
+                                        </li>
                                     </ul>
 
-                                    <p className="text-grey mt-3" id="project_desc"></p>
+                                    <p className="text-grey mt-3" id="project_desc">
+                                        {data?.project_desc}
+                                    </p>
                                 </div>
                             </div>
 
@@ -133,11 +147,18 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                 <div className="detail-information mb-4">
                                     <p className="detail-perday mb-3">What will the space look like?</p>
 
-                                    <p className="text-grey mt-3" id="space_look_like"></p>
+                                    <p className="text-grey mt-3" id="space_look_like">
+                                        {data?.talkspaceowner}
+                                    </p>
                                 </div>
-
                                 <div className="detail-information mb-4">
                                     <ul className="form-row detail-image" id="enquiry_iamges">
+                                        var enquiry_images = enquiry_detail['spaceEnquiryImages'];
+                                        {data?.spaceEnquiryImages?.map(({ enquiry_image_path }, idx) => (
+                                            <li className="col-sm-4 col-6">
+                                                <img src={enquiry_image_path} className="img-fluid rounded w-100" />
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
