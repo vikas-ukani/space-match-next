@@ -30,7 +30,6 @@ export const getServerSideProps = async ({ req }) => {
     }
 }
 
-
 const Favorite = ({ favData }) => {
     const [favorites, setFavorites] = useState(favData)
     const user = getUser()

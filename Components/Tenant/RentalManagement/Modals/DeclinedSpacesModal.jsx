@@ -1,5 +1,6 @@
 import DeclinedSpacesSlider from "@/Components/Common/Sliders/Tenant/DeclinedSpaces/DeclinedSpacesSlider";
 import FavoriteImageSlider from "@/Components/Common/Sliders/Tenant/Favorite/FavoriteImageSlider";
+import Link from "next/link";
 import { Modal } from "react-bootstrap";
 
 const DeclinedSpacesModal = ({ show, setShow, data }) => {
@@ -37,10 +38,19 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                         <div className="list-space-card list-rental-card d-lg-flex align-items-lg-center">
                             <div className="form-group">
                                 <div className="space-item">
-                                    <a className="space-title text-truncate mt-0" target="_blank" id="enquiry_property_name"></a>
+                                    <Link href={`/space/${data?.property?.slug}`}>
+                                        <a className="space-title text-truncate mt-0" target="_blank" id="enquiry_property_name">
+                                            {data?.property?.name}
+                                        </a>
+                                    </Link>
+
                                     <div>
-                                        <p className="space-address text-truncate" id="enquiry_address"></p>
-                                        <p className="space-size" id="enquiry_property_size"></p>
+                                        <p className="space-address text-truncate" id="enquiry_address">
+                                            {data?.property?.full_address?.postal_code}
+                                        </p>
+                                        <p className="space-size" id="enquiry_property_size">
+                                            {data?.property?.property_size + ' ' + data?.property?.property_size_type}
+                                        </p>
                                     </div>
                                     <div>
                                         <p className="space-price">R <span id="enquiry_price"></span> <span className="space-size">for <span id="enquiry_days"></span> days</span></p>

@@ -36,12 +36,10 @@ const Decline = ({ decline_enquiries }) => {
     const [show, setShow] = useState(false)
     const [data, setData] = useState(null)
 
-
     const viewEnquiryById = async id => {
         const { data: dataRes} = await getSWR(getEnquiryByIDAPI(id))
         if (dataRes) {
             setShow(true)
-            console.log('dataRes', dataRes);
             setData(dataRes)
         }
     }
