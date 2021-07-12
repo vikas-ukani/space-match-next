@@ -7,9 +7,7 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
     console.log("Modal Data", data);
 
     return (
-        <Modal
-            show={show}
-            size={'xl'} backdrop="static"
+        <Modal show={show} size={'xl'} backdrop="static"
             onHide={() => setShow(false)}
             dialogClassName="modal-90w"
             aria-labelledby="example-custom-modal-styling-title"
@@ -119,9 +117,7 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                         {data?.spaceUsedFor?.map(({ title, space_used_for_image_class }, idx) => (
                                             <a href="" key={idx} className="text-grey text-center">
                                                 <span>
-                                                    <i class={`icon ${space_used_for_image_class} d-block mb-3`}>
-
-                                                    </i>
+                                                    <i class={`icon ${space_used_for_image_class} d-block mb-3`}></i>
                                                 </span>
                                                 {title}
                                             </a>
@@ -145,7 +141,6 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                                     </p>
                                 </div>
                             </div>
-
                             <div className="col-lg-6">
                                 <div className="detail-information mb-4">
                                     <p className="detail-perday mb-3">What will the space look like?</p>
