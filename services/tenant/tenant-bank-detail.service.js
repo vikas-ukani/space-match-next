@@ -1,7 +1,4 @@
 
-
-
-
 export const getAPI = () => {
     return {
         url: `${API_URL}/my-bank-detail`,

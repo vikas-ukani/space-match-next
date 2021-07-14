@@ -28,6 +28,18 @@ export const getPaymentPipelineAPI = () => {
     }
 }
 
+(_learnq || []).push(['track', 'Viewed Item', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+        Brand: item.Brand,
+        Price: item.Price,
+        CompareAtPrice: item.CompareAtPrice
+    }
+}]);
 export const getDeclinePipelineAPI = () => {
     return {
         url: `${API_URL}/tenant-declined-pipeline`,
