@@ -2,9 +2,9 @@ import DashboardSideNav from "@/Layouts/Dashboard/DashboardSideNav";
 import { axiosCall } from "@/lib/useSWRAxios";
 
 
-export async function getServerSideProps({ req}) {
+export async function getServerSideProps({ req }) {
     const { token_type, token } = req.cookies
-    
+
     console.log('asd', token_type);
 
     return {
@@ -53,7 +53,7 @@ const TenantBankDetail = () => {
                                         <div className="form-group">
                                             <label>Bank</label>
                                             <input type="text" className="form-control" id="bankname" name="bankname"
-                                                defaultValue="{{ !empty($bankDetails->bankname) ? $bankDetails->bankname : ''  }}"
+                                                defaultValue={data?.bankname}
                                             // @if($hidden) readonly @endif 
                                             />
                                             <em id="bankname_error" className="error invalid-feedback"></em>
@@ -62,7 +62,7 @@ const TenantBankDetail = () => {
                                         <div className="form-group">
                                             <label>Name of Account Holder</label>
                                             <input type="text" className="form-control" id="nameaccountholder" name="nameaccountholder"
-                                                defaultValue="{{ !empty($bankDetails->nameaccountholder) ? $bankDetails->nameaccountholder : ''  }}"
+                                                defaultValue={data?.nameaccountholder}
                                             // @if($hidden) readonly @endif
                                             />
                                             <em id="nameaccountholder_error" className="error invalid-feedback"></em>
@@ -71,7 +71,7 @@ const TenantBankDetail = () => {
                                         <div className="form-group">
                                             <label>Account Number</label>
                                             <input type="text" className="form-control" id="accountnumber" name="accountnumber"
-                                                defaultValue="{{ !empty($bankDetails->accountnumber) ? $bankDetails->accountnumber : ''  }}"
+                                                defaultValue={data?.accountnumber}
                                             // @if($hidden) readonly @endif 
                                             />
                                             <em id="accountnumber_error" className="error invalid-feedback"></em>
@@ -96,7 +96,7 @@ const TenantBankDetail = () => {
                                         <div className="form-group">
                                             <label>Branch Code</label>
                                             <input type="text" className="form-control" id="branchcode" name="branchcode"
-                                                defaultValue="{{ !empty($bankDetails->branchcode) ? $bankDetails->branchcode : ''  }}"
+                                                defaultValue={data?.branchcode}
                                             // @if($hidden) readonly @endif 
                                             />
                                             <em id="branchcode_error" className="error invalid-feedback"></em>
@@ -112,6 +112,7 @@ const TenantBankDetail = () => {
                                             <label className="font-weight-medium">Bank Stamped proof of banking details</label>
                                             <div className="custom-file mb-3 d-flex align-items-center" id="bank_proof">
                                                 <input type="file" className="custom-file-input" id="bankdocument" name="bankdocument"
+                                                    defaultValue={data?.bankdocument}
                                                 // @if($hidden) disabled @endif 
                                                 />
                                                 <label className="custom-file-label font-weight-bold" htmlFor="bankdocument">Upload</label>
@@ -173,10 +174,15 @@ const TenantBankDetail = () => {
                                 <div className="row border-top pt-4">
                                     <div className="col-xl-4 ml-auto">
                                         <div className="form-group">
-                                            <input type="hidden" name="bank_id" id="bank_id" defaultValue="{{ !empty($bankDetails->id) ? $bankDetails->id : ''  }}" />
-                                            <input type="hidden" name="action_name" id="action_name" defaultValue="{{ $is_add_update }}" />
+                                            <input type="hidden" name="bank_id" id="bank_id"
+                                                defaultValue={bankDetails?.id}
+                                            />
+                                            <input type="hidden" name="action_name" id="action_name"
+                                                defaultValue="{{ $is_add_update }}" />
                                             {/* @if(!$hidden) */}
-                                            <button type="button" id="updateDocument" className="btn btn-primary btn-block">Add/Update</button>
+                                            <button type="button" id="updateDocument" className="btn btn-primary btn-block">
+                                                Add/Update
+                                            </button>
                                             {/* @endif */}
                                         </div>
                                     </div>
