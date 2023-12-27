@@ -1,11 +1,11 @@
 const FinsSpace = () => {
 
-    const addressData = {
-        address: "",
-        address_lat: "",
-        address_lon: "",
-        ...(!true && {location: "Not Found"})
-    }
+        const addressData = {
+            address: "",
+            address_lat: "",
+            address_lon: "",
+            ...(!true && {location: "Not Found"})
+        }
 
     return (
         <div className="section-filter d-lg-flex">
