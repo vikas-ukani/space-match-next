@@ -83,10 +83,8 @@ const Decline = ({ decline_enquiries }) => {
                                                     {created_date}
                                                 </td>
                                                 <td>
-                                                    <Link href={'/space/' + list.property.slug}>
-                                                        <a target="_blank">
+                                                    <Link href={'/space/' + list.property.slug} target="_blank">
                                                             {list.property.name}
-                                                        </a>
                                                     </Link>
                                                 </td>
                                                 <td>

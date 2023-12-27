@@ -7,11 +7,9 @@ const LandlordRouteLinks = () => {
         <>
             <li>
                 <Link href={'/dashboard-landlord'}>
-                    <a>
-                        <i className="icon icon-dashboard">
-                        </i>
-                        <span>Dashboard</span>
-                    </a>
+                    <i className="icon icon-dashboard">
+                    </i>
+                    <span>Dashboard</span>
                 </Link>
             </li>
             {user.is_verify_fica_detail == 1 && (
@@ -20,11 +18,9 @@ const LandlordRouteLinks = () => {
                         <>
                             <li>
                                 <Link href={'/landlord-my-spaces'}>
-                                    <a>
                                         <i className="icon icon-space">
                                         </i>
                                         <span>My Spaces</span>
-                                    </a>
                                 </Link>
                             </li>
                             <li>

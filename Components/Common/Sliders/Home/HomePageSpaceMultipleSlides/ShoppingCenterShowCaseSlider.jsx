@@ -44,7 +44,6 @@ const ShoppingCenterShowCaseSlider = ({ malls, setting = {} }) => {
                         <div className="items p-2" key={mall.id}>
                             <div className="card-city card-mall">
                                 <Link href={'/mall/' + mall.slug} >
-                                    <a>
                                         <img height="100%" width="100%" src={mall.image_path} className="img-fluid" alt={mall.name} />
                                         <div className="card-city-content">
                                             <div className="section-title">
@@ -53,7 +52,6 @@ const ShoppingCenterShowCaseSlider = ({ malls, setting = {} }) => {
                                                 </h4>
                                             </div>
                                         </div>
-                                    </a>
                                 </Link>
                             </div>
                         </div>

@@ -14,8 +14,8 @@ const Dashboard = () => {
                                 <p className="sub-text">Tenant</p>
                             </div>
                             <h6 className="box-title">Visit Dashboard</h6>
-                            <Link href="/dashboard-tenant">
-                                <a className="btn btn-primary">view</a>
+                            <Link href="/dashboard-tenant" className="btn btn-primary">
+                                view
                             </Link>
                         </div>
                     </div>
@@ -26,8 +26,8 @@ const Dashboard = () => {
                                 <p className="sub-text">Landlord</p>
                             </div>
                             <h6 className="box-title">Visit Dashboard</h6>
-                            <Link href="/dashboard-landlord">
-                                <a className="btn btn-primary">view</a>
+                            <Link href="/dashboard-landlord" className="btn btn-primary">
+                                View
                             </Link>
                         </div>
                     </div>

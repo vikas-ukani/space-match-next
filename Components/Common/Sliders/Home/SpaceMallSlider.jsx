@@ -44,7 +44,6 @@ const SpaceMallSlider = ({ spaceMall, setting = {} }) => {
                     return (
                         <div key={mall.id} className="items ">
                             <Link href={'/mall/' + mall.slug} >
-                                <a>
                                     <img src={mall.image_path} className="img-fluid" alt={mall.name} />
                                     <div className="card-city-content">
                                         <div className="section-title">
@@ -53,7 +52,6 @@ const SpaceMallSlider = ({ spaceMall, setting = {} }) => {
                                             </h4>
                                         </div>
                                     </div>
-                                </a>
                             </Link>
                         </div>
                     )

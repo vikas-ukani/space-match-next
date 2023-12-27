@@ -61,11 +61,9 @@ const ForgotPasswordPage = () => {
                                     </button>
                                 </div>
 
-                                <Link href={LOGIN_ROUTE}>
-                                    <a className="font-weight-bold text-dark text-uppercase">
+                                <Link href={LOGIN_ROUTE} className="font-weight-bold text-dark text-uppercase">
                                         <i className="icon icon-chevron-small-right align-sub pl-3"></i>
                                             Back to login.
-                                        </a>
                                 </Link>
                             </form>
                         </div>

@@ -12,8 +12,8 @@ const ThankYou = () => {
                                     <h3 className="font-weight-medium title-sm">Thank you for Contacting Us.</h3>
                                 </div>
                                 <p className="mb-5 lead font-weight-medium">Please contact us at <a className="text-primary" href="mailto:info@spacematch.co.za">info@spacematch.co.za</a> if you need any other information.</p>
-                                <Link href="/" >
-                                    <a className="btn btn-sm btn-primary">Go To Home</a>
+                                <Link href="/" className="btn btn-sm btn-primary" >
+                                    Go To Home
                                 </Link>
                             </div>
                         </div>

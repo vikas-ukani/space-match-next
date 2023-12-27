@@ -22,14 +22,14 @@ const BlogCardCarousel = ({ blogs, setting = {} }) => {
                                         <div className="card-blog-content">
                                             <div className="section-title">
                                                 <h4 className="title-xs">
-                                                    <Link href={'/blog/' + blog.slug} >
-                                                        <a className="text-dark"  >{blog.title}</a>
+                                                    <Link href={'/blog/' + blog.slug} className="text-dark">
+                                                        {blog.title}
                                                     </Link>
                                                 </h4>
                                             </div>
                                             <p className="text-grey mt-4">{blog.brief}</p>
-                                            <Link href={'/blog/' + blog.slug} >
-                                                <a className="text-grey text-uppercase mt-auto" >Read More</a>
+                                            <Link href={'/blog/' + blog.slug} className="text-grey text-uppercase mt-auto">
+                                                Read More
                                             </Link>
                                         </div>
                                     </div>

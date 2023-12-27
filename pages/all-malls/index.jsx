@@ -30,7 +30,6 @@ const AllMalls = ({ malls }) => {
                                     <div key={mall.id} className="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-12">
                                         <div className="card-city card-mall">
                                             <Link href={"/mall/" + mall.slug} >
-                                                <a >
                                                     {/* @php
                                                         $fname = basename($mall->listing_image_path);
                                                         $path = substr($mall->listing_image_path, 0, strrpos($mall->listing_image_path, $fname));
@@ -47,7 +46,6 @@ const AllMalls = ({ malls }) => {
                                                             </h4>
                                                         </div>
                                                     </div>
-                                                </a>
                                             </Link>
 
                                         </div>
@@ -62,8 +60,8 @@ const AllMalls = ({ malls }) => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="">
-                                <Link href={"/all-malls"} >
-                                    <a href="" id="showMoreMalls" className="text-see-more">More Shopping Centre Showcase <span>→</span></a>
+                                <Link href={"/all-malls"}  id="showMoreMalls" className="text-see-more">
+                                    More Shopping Centre Showcase <span>→</span>
                                 </Link>
                                 <input type="hidden" id="cur_page" value="1" />
                                 <input type="hidden" id="last_page" value="{{ $malls->meta->last_page }}" />

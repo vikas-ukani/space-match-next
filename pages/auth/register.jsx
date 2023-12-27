@@ -8,7 +8,7 @@ import { useToasts } from "react-toast-notifications";
 
 const RegisterPage = () => {
 
-    const {addToast} = useToasts()
+    const { addToast } = useToasts()
 
 
     const [isTenantUser, setIsTenantUser] = useState(false)
@@ -78,7 +78,7 @@ const RegisterPage = () => {
 
         let response = await postData('/register', inputData)
         if (response.success) {
-            addToast(response.message, )
+            addToast(response.message,)
         } else {
             addToast(response.message[0][0])
         }
@@ -271,7 +271,7 @@ const RegisterPage = () => {
                                     <input type="checkbox" className="custom-control-input" name="subscribed" value="1" />
                                     <label className="custom-control-label font-weight-normal text-dark-grey" htmlFor="subscribed">
                                         Yes please, I would like to receive notifications and information from SpaceMatch.
-                                </label>
+                                    </label>
                                 </div>
                             </div>
 
@@ -283,7 +283,7 @@ const RegisterPage = () => {
                             <div className="form-group mt-5">
                                 <p className="text-dark-grey text-center font-weight-medium">
                                     I already have an account? Login
-                                     <Link href="/auth/login"><a className="text-dark" href="{{ url('/login') }}">HERE</a></Link>
+                                    <Link href="/auth/login" className="text-dark">HERE</Link>
                                 </p>
                             </div>
                         </form>

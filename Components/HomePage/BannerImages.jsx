@@ -10,7 +10,7 @@ const BannerImages = () => {
         let { data } = await getData('/getHomePageImages')
         const homeImage = findWhere(data, { image_type: 1 })
         console.log('homeImage', homeImage)
-        setBgImage(homeImage.image_path)
+        homeImage && setBgImage(homeImage.image_path)
     }, [])
     return (
         // 

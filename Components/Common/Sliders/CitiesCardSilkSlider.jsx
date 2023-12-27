@@ -15,7 +15,6 @@ const CitiesCardSilkSlider = ({ cities, setting }) => {
                         <div key={city.id} className="items  col-12">
                             <div className="card-city">
                                 <Link href={'/city/' + city.slug} >
-                                    <a >
                                         <div className="card-city-image">
                                             <img src={getSmallImageUrl(city.listing_image_path)}
                                                 className="img-fluid" alt={city.name} />
@@ -25,7 +24,6 @@ const CitiesCardSilkSlider = ({ cities, setting }) => {
                                                 <h4 className="title-md">{city.name}</h4>
                                             </div>
                                         </div>
-                                    </a>
                                 </Link>
                             </div>
                         </div>

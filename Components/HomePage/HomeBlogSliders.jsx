@@ -21,7 +21,7 @@ const HomeBlogSliders = () => {
                         </div>
                         {/* <BlogCardCarousel blogs={blogs}  /> */}
 
-                        {blogs.map(blog => {
+                        {blogs?.map(blog => {
                             return (
                                 <div key={blog.id} className="col-lg-6 col-md-6" >
                                     <div className="card-blog">

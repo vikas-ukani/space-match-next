@@ -39,9 +39,7 @@ const DashboardSideNav = () => {
                 <div className="wrapper">
                     <div className="logo">
                         <Link href="/">
-                        <a>
                             <img src="/images/logo.svg" className="img-fluid" alt="Space Match" />
-                            </a>
                         </Link>
                         <button className="navbar-toggler collapsed" type="button" data-toggle="collapse">
                             <span className="icon-bar top-bar"></span>
@@ -52,20 +50,18 @@ const DashboardSideNav = () => {
                     <div className="menu">
                         <ul>
                             <li>
-                                <Link href="/">
-                                    <a className="text-truncate text-white text-capitalize">
+                                <Link href="/" className="text-truncate text-white text-capitalize">
                                         <b>Hi, </b>
                                         <span className="font-weight-medium">
                                             {(user && user.firstname) ? user.firstname : 'No User'}
                                         </span>
-                                    </a>
                                 </Link>
                             </li>
                             {isShowingTenantRoute && <TenantRouteLinks />}
                             {isShowingLandlordRoute && <LandlordRouteLinks />}
                             <li>
                                 <Link href="/">
-                                    <a><i className="icon icon-home"></i> <span>Back To homepage</span></a>
+                                    <i className="icon icon-home"></i> <span>Back To homepage</span>
                                 </Link>
                             </li>
                             <li>

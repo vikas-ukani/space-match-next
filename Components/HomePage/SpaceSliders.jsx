@@ -24,7 +24,7 @@ const SpaceSliders = ({ data }) => {
                                 <div className="section-title">
                                     <h4 className="title-sm text-center">
                                         {/* <Link href="/city/cape-town"> */}
-                                        <a>Spaces in <span>{spacesKeys[index]}</span></a>
+                                        Spaces in <span>{spacesKeys[index]}</span>
                                         {/* </Link> */}
                                     </h4>
                                 </div>
@@ -49,8 +49,8 @@ const SpaceSliders = ({ data }) => {
                 <div className="row mt-5">
                     <div className="col-lg-12">
                         <div className="text-center">
-                            {/* <Link href="/find-space"> */}
-                            <a className="btn btn-dark text-white">
+                            {/* <Link href="/find-space" className="btn btn-dark text-white"> */}
+                            <a >
                                 View All Spaces
                             </a>
                             {/* </Link> */}

@@ -28,8 +28,8 @@ const PendingApprovalStage = ({ pending_enquiries }) => {
                         </div>
                         <div className="card-body p-0 pb-2">
                             <p  >
-                                <Link href={`/space/${data?.property?.slug}`}>
-                                    <a target="_blank">{data?.property?.name}</a>
+                                <Link href={`/space/${data?.property?.slug}`} target="_blank">
+                                    {data?.property?.name}
                                 </Link>
                             </p>
 

@@ -74,8 +74,8 @@ const login = () => {
                                 <em id="password_error" className="error invalid-feedback"></em>
                             </div>
                             <div className="form-group text-right">
-                                <Link href={FORGOT_PASSWORD_ROUTE} >
-                                    <a className="text-dark-grey font-weight-medium" ><u>Forgot Password ?</u></a>
+                                <Link href={FORGOT_PASSWORD_ROUTE} className="text-dark-grey font-weight-medium">
+                                    <u>Forgot Password ?</u>
                                 </Link>
                             </div>
                             <div className="form-group pt-3">
@@ -84,8 +84,8 @@ const login = () => {
                             <div className="form-group mt-5">
                                 <p className="text-dark-grey text-center font-weight-medium">
                                     I don’t have an account yet? {" "}
-                                    <Link href={`${REGISTER_ROUTE}`}>
-                                        <a className="text-dark" >Register HERE...</a>
+                                    <Link href={`${REGISTER_ROUTE}`} className="text-dark" >
+                                        Register HERE...
                                     </Link>
                                 </p>
                             </div>

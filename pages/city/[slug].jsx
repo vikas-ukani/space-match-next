@@ -192,8 +192,8 @@ const CitySlug = ({ city_detail, cities }) => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="">
-                                <Link href="/all-cities" >
-                                    <a className="text-see-more">explore spaces in all suburbs and cities <span>→</span></a>
+                                <Link href="/all-cities" className="text-see-more" >
+                                    explore spaces in all suburbs and cities <span>→</span>
                                 </Link>
                             </div>
                         </div>
@@ -254,8 +254,8 @@ const CitySlug = ({ city_detail, cities }) => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="">
-                                    <Link href="/blogs" >
-                                        <a className="text-see-more">see more articles <span>→</span></a>
+                                    <Link href="/blogs" className="text-see-more">
+                                        see more articles <span>→</span>
                                     </Link>
                                 </div>
                             </div>

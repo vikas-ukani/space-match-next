@@ -31,52 +31,48 @@ const FooterBottom = () => {
                         <div className="col-lg-3">
                             <div className="footer-link">
                                 <h6 className="text-uppercase mb-2">
-                                    <Link href="/" >
-                                        <a className="d-inline-block">
-                                            <img src="/images/logo-footer.svg" className="img-fluid d-block" alt="SpaceMatch" />
-                                        </a>
+                                    <Link href="/" className="d-inline-block">
+                                        <img src="/images/logo-footer.svg" className="img-fluid d-block" alt="SpaceMatch" />
                                     </Link>
                                 </h6>
                                 <ul>
                                     <li>
                                         <Link href="/about-us" >
-                                            <a >About Us</a>
+                                            About Us
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/company" >
-                                            <a >Company</a>
+                                            Company
                                         </Link>
                                     </li>
                                     <li className="dropdown">
-                                        <Link href="/" >
-                                            <a className="dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                How
-                                                <span className="text-capitalize">SpaceMatch</span> works
-                                            </a>
+                                        <Link href="/" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            How
+                                            <span className="text-capitalize">SpaceMatch</span> works
                                         </Link>
                                         <div className="dropdown-menu">
-                                            <Link href="/space-user" >
-                                                <a className="dropdown-item" >find space</a>
+                                            <Link href="/space-user" className="dropdown-item">
+                                                Find space
                                             </Link>
-                                            <Link href="/space-owner" >
-                                                <a className="dropdown-item"  >list space</a>
+                                            <Link href="/space-owner" className="dropdown-item">
+                                                List space
                                             </Link>
                                         </div>
                                     </li>
                                     <li>
                                         <Link href="/faq" >
-                                            <a >Faq's</a>
+                                            Faq's
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/popup-trend">
-                                            <a >#startsomething</a>
+                                            #startsomething
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/blogs" >
-                                            <a >Blog</a>
+                                            Blog
                                         </Link>
                                     </li>
                                 </ul>
@@ -85,22 +81,18 @@ const FooterBottom = () => {
                             <div className="footer-link footer-social">
                                 <ul className="list-inline">
                                     <li className="list-inline-item">
-                                        <Link href="https://web.facebook.com/SpaceMatch.ZA/">
-                                            <a rel="noreferrer" target="_blank">
-                                                <i className="icon icon-facebook shake"></i>
-                                            </a>
+                                        <Link href="https://web.facebook.com/SpaceMatch.ZA/" rel="noreferrer" target="_blank">
+                                            <i className="icon icon-facebook shake"></i>
                                         </Link>
                                     </li>
                                     <li className="list-inline-item">
-                                        <Link href="https://www.instagram.com/spacematch_za/">
-                                            <a rel="noreferrer" target="_blank"><i className="icon icon-instagram shake"></i></a>
+                                        <Link href="https://www.instagram.com/spacematch_za/" rel="noreferrer" target="_blank">
+                                            <i className="icon icon-instagram shake"></i>
                                         </Link>
                                     </li>
                                     <li className="list-inline-item">
-                                        <Link href="https://www.linkedin.com/company/spacematch/">
-                                            <a rel="noreferrer" target="_blank">
-                                                <i className="icon icon-linkedin shake"></i>
-                                            </a>
+                                        <Link href="https://www.linkedin.com/company/spacematch/" rel="noreferrer" target="_blank">
+                                            <i className="icon icon-linkedin shake"></i>
                                         </Link>
                                     </li>
                                 </ul>
@@ -141,8 +133,8 @@ const FooterBottom = () => {
                                 <div className="row gutters-30 ">
                                     <div className="col-lg-12">
                                         <h4>
-                                            <Link href={'/'} >
-                                                <a className="text-primary">Find a rental space.</a>
+                                            <Link href={'/'} className="text-primary">
+                                                Find a rental space.
                                             </Link>
                                         </h4>
                                     </div>
@@ -151,7 +143,7 @@ const FooterBottom = () => {
                                         <div className="footer-link">
                                             <h6 className="mb-1">South Africa’s Shopping Centres</h6>
                                             <Link href={"/all-malls"}>
-                                                <a >All Shopping Centres</a>
+                                                All Shopping Centres
                                             </Link>
                                             {footerMalls && (
                                                 <ul>
@@ -160,7 +152,7 @@ const FooterBottom = () => {
                                                         return (
                                                             <li key={fMall.id}>
                                                                 <Link href={"/mall/" + fMall.slug} >
-                                                                    <a >{fMall.name}</a>
+                                                                    {fMall.name}
                                                                 </Link>
                                                             </li>
                                                         )
@@ -175,7 +167,7 @@ const FooterBottom = () => {
                                     <div className="col-lg-6">
                                         <div className="footer-link">
                                             <h6 className="mb-1">South Africa’s Suburbs & Cities</h6>
-                                            <Link href={"/all-cities"}><a >All Suburbs & Cities</a></Link>
+                                            <Link href={"/all-cities"}>All Suburbs & Cities</Link>
                                             {footerCities && (<ul>
                                                 <li>
                                                     <a className="text-uppercase text-white">FEATURED</a>
@@ -184,7 +176,7 @@ const FooterBottom = () => {
                                                     return (
                                                         <li key={city.id}>
                                                             <Link href={"/city/" + city.slug}>
-                                                                <a >  {city.name}</a>
+                                                                {city.name}
                                                             </Link>
                                                         </li>
                                                     )
@@ -201,9 +193,9 @@ const FooterBottom = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <ul className="footer-bottom-link">
-                                <li><Link href="/privacy-policy" ><a >Privacy Policy</a></Link></li>
-                                <li><Link href="/terms-and-condition" ><a >Terms of Service</a></Link></li>
-                                <li><Link href="/acceptable-use-policy" ><a >Acceptable Use Policy</a></Link></li>
+                                <li><Link href="/privacy-policy" >Privacy Policy</Link></li>
+                                <li><Link href="/terms-and-condition" >Terms of Service</Link></li>
+                                <li><Link href="/acceptable-use-policy" >Acceptable Use Policy</Link></li>
                             </ul>
                         </div>
                     </div>

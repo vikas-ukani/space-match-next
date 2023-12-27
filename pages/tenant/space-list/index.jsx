@@ -154,10 +154,8 @@ const Specialist = ({ enquiries: enquiriesData }) => {
                                             </div>
 
                                             <div className="form-group text-right ">
-                                                <Link href={`/tenant-edit-enquiry/${enquiry?.id}`}>
-                                                    <a className="enquiry-edit  mt-2">
-                                                        <i className="icon icon-circle-edit"></i>
-                                                    </a>
+                                                <Link href={`/tenant-edit-enquiry/${enquiry?.id}`} className="enquiry-edit  mt-2">
+                                                    <i className="icon icon-circle-edit"></i>
                                                 </Link>
 
                                                 <a onClick={() => deleteEnquiry(enquiry?.id)}>
@@ -173,8 +171,8 @@ const Specialist = ({ enquiries: enquiriesData }) => {
                         <div className="col-lg-12">
                             <div className="d-lg-flex justify-content-between mt-2">
                                 <div className="form-group">
-                                    <Link href="/find-space" >
-                                        <a className="btn btn-outline-dark"  >add more space</a>
+                                    <Link href="/find-space" className="btn btn-outline-dark">
+                                        Add more space
                                     </Link>
                                 </div>
                                 <div className="form-group text-right">

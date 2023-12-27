@@ -36,10 +36,8 @@ const DeclinedSpacesModal = ({ show, setShow, data }) => {
                         <div className="list-space-card list-rental-card d-lg-flex align-items-lg-center">
                             <div className="form-group">
                                 <div className="space-item">
-                                    <Link href={`/space/${data?.property?.slug}`}>
-                                        <a className="space-title text-truncate mt-0" target="_blank" id="enquiry_property_name">
+                                    <Link href={`/space/${data?.property?.slug}`} className="space-title text-truncate mt-0" target="_blank" id="enquiry_property_name">
                                             {data?.property?.name}
-                                        </a>
                                     </Link>
 
                                     <div>

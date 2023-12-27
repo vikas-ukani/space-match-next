@@ -60,8 +60,8 @@ const BlogSlug = ({ blog, moreBlogs }) => {
                                                                 <div className="card-blog-content equalHeight1">
                                                                     <div className="section-title">
                                                                         <h4 className="title-xs">
-                                                                            <Link href={'/blog/' + blg.slug} >
-                                                                                <a className="text-dark" >{blg.title}</a>
+                                                                            <Link href={'/blog/' + blg.slug} className="text-dark">
+                                                                                {blg.title}
                                                                             </Link>
                                                                         </h4>
                                                                     </div>
@@ -149,8 +149,8 @@ const BlogSlug = ({ blog, moreBlogs }) => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="">
-                                <Link href="/blogs">
-                                    <a className="text-see-more">see more articles <span>→</span></a>
+                                <Link href="/blogs" className="text-see-more">
+                                    See more articles <span>→</span>
                                 </Link>
                             </div>
                         </div>

@@ -183,9 +183,7 @@ const MallSlug = ({ mall, spaceMall }) => {
                     <div className="spaceinner-carousel">
                         <div className="space-image-item">
                             <Link href={'/space' + mall.slug} >
-                                <a href="">
                                     <img src={mall.property_image_path} className="img-fluid" alt={mall.name} />
-                                </a>
                             </Link>
                         </div>
                     </div>
