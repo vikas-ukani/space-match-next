@@ -23,16 +23,23 @@ const BrandListing = () => {
                     <div className="col-lg-12 d-flex">
                         {brands.slice(0, 4).map(brand => {
                             return (
-                                <div key={brand.id} className=" brand-items col-md-3 col-lg-3 col-3">
-                                    <Image height={"100%"} width={"100%"} src={brand.image_path} className="img-fluid  image-rounded" alt={"brand.name"} />
+                                <div key={brand.id} className=" brand-items col-md-3 col-lg-3 col-3"
+                                    style={{ width: '100%', height: '100%', position: 'relative' }}>
+                                    <Image layout='fill'
+                                        objectFit='contain'
+                                        src={brand.image_path} className="img-fluid  image-rounded" alt={"brand.name"} />
                                 </div>
                             )
                         })}
                         <div className="brand-carousel slick-hide-carousel">
                             {brands.map(brand => {
                                 return (
-                                    <div key={brand.id} className="brand-items">
-                                        <Image height={"100%"} width={"100%"} src={brand.image_path} className="img-fluid" alt={"brand.name"} />
+                                    <div key={brand.id} className="brand-items"
+                                        style={{ width: '100%', height: '100%', position: 'relative' }}>
+                                        <Image
+                                            layout='fill'
+                                            objectFit='contain'
+                                            src={brand.image_path} className="img-fluid" alt={"brand.name"} />
                                         {/* <img height="100%" width="100%" src={brand.image_path} className="img-fluid" alt="brand" /> */}
                                     </div>
                                 )
